@@ -23,8 +23,7 @@ forts   LDA a
         OTC
         LDA sum
         OUT
-        LDA space
-        OTC
+        LDA \n
         OTC
         LDA n_print
         OTC
@@ -32,9 +31,7 @@ forts   LDA a
         OTC
         LDA n
         OUT
-        LDA space
-        OTC
-        OTC
+        LDA \n
         OTC
         LDA d
         OTC
@@ -64,3 +61,4 @@ a       DAT 97
 n_print DAT 110
 d       DAT 100
 space   DAT 32
+\n      DAT 10

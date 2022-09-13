@@ -1,0 +1,66 @@
+// while INP≠0:
+// 1.tar imot input
+// 2.lagrer det
+// 3.adderer med lagret sum
+// 4.lagrer ny sum
+// 5.n = n+1
+loop    INP 
+// sjekker INP:
+// INP=0: hopper til forts
+        BRZ forts 
+        STA input
+        ADD sum 
+        STA sum
+        LDA n
+        ADD one
+        STA n
+        BRA loop
+// fortsetter her ved INP=0
+// 1. divisjon: sum/n
+forts   LDA a 
+        OTC
+        LDA =
+        OTC
+        LDA sum
+        OUT
+        LDA space
+        OTC
+        OTC
+        LDA n_print
+        OTC
+        LDA =
+        OTC
+        LDA n
+        OUT
+        LDA space
+        OTC
+        OTC
+        OTC
+        LDA d
+        OTC
+        LDA =
+        OTC
+// divisjon:
+        BRA startL2
+loop2   STA sum
+        LDA quot
+        ADD one
+        STA quot
+startL2 LDA sum // dividend
+        SUB n // divisor
+// sjekker svar:
+        BRP loop2
+// loop2 stopper ved < 0
+        LDA quot
+        OUT
+        HLT
+input   DAT 0
+sum     DAT 0
+n       DAT 0
+quot    DAT 0 //quotient
+one     DAT 1
+=       DAT 61
+a       DAT 97
+n_print DAT 110
+d       DAT 100
+space   DAT 32
